@@ -84,19 +84,21 @@ static const char *rss[]   = { "st", "-e", "newsboat", NULL };
 static const char *mail[]   = { "st", "-e", "neomutt", NULL };
 static const char *firefox[]  = { "firefox", NULL };
 static const char *connect[] = { "st", "-e", ".config/script.sh", NULL }; /*Portal*/
+static const char *nvim[] = {"st", "-e", "nvim .", NULL};
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,             		    XK_Return, spawn,          {.v = termcmd } },
-    { MODKEY,                       XK_e,      spawn,          {.v = ranger } },
-    { MODKEY,                       XK_w,      spawn,          {.v = firefox } },
-    { MODKEY,                       XK_f,      spawn,          {.v = rss } },
+    	{ MODKEY,                       XK_e,      spawn,          {.v = ranger } },
+    	{ MODKEY,                       XK_w,      spawn,          {.v = firefox } },
+    	{ MODKEY,                       XK_f,      spawn,          {.v = rss } },
 	{ MODKEY,                       XK_m,      spawn,          {.v = mail} },
-    { MODKEY,                       XK_b,      spawn,          {.v = htop } },
-    { MODKEY,                       XK_x,      spawn,          {.v = connect } },
-    { MODKEY,                       XK_t,      spawn,          SHCMD("maim ~/Pictures/$(date +%s).png") },
-    { Mod1Mask|ShiftMask,           XK_l,      spawn,          SHCMD("slock") },
+    	{ MODKEY,                       XK_b,      spawn,          {.v = htop } },
+    	{ MODKEY,                       XK_x,      spawn,          {.v = connect } },
+    	{ MODKEY,                       XK_n,      spawn,          {.v = nvim } },
+    	{ MODKEY,                       XK_t,      spawn,          SHCMD("maim ~/Pictures/$(date +%s).png") },
+    	{ Mod1Mask|ShiftMask,           XK_l,      spawn,          SHCMD("slock") },
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },

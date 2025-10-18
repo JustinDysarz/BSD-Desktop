@@ -15,5 +15,6 @@ cp -r Wallpapers ~/Media &
 cd suckless/dmenu &&  make && doas make install clean &&
 cd ../dwm &&  make && doas make install clean &&
 cd ../slock && make && doas make install clean &&
+cd ../slstatus && make && doas make install clean &&
 cd ../st &&  doas make install clean && cd ../tabbed &&
 make && doas make install clean

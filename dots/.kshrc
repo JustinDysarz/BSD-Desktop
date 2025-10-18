@@ -1,4 +1,4 @@
-export EDITOR=vim
+export EDITOR=nvim
 export FCEDIT=$EDITOR
 export PAGER=less
 export LESS='-iMRS -x2'
@@ -10,6 +10,7 @@ HISTSIZE=20000
 
 alias wttr='curl http://wttr.in/Natchitoches' 
 alias v='vim'
+alias n='nvim'
 alias ls='lsd'
 alias ll='lsd -lh'
 alias la='lsd -lha'
