@@ -84,7 +84,7 @@ static const char *rss[]   = { "st", "-e", "newsboat", NULL };
 static const char *mail[]   = { "st", "-e", "neomutt", NULL };
 static const char *firefox[]  = { "firefox", NULL };
 static const char *connect[] = { "st", "-e", ".config/script.sh", NULL }; /*Portal*/
-static const char *nvim[] = {"st", "-e", "nvim .", NULL};
+static const char *nvim[] = {"st", "-e", "nvim", NULL};
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
