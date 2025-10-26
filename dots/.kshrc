@@ -8,7 +8,7 @@ export CLICOLOR=1
 HISTFILE=$HOME/.ksh_history
 HISTSIZE=20000
 
-alias wttr='curl http://wttr.in/Natchitoches' 
+alias wttr='curl https://wttr.in/Natchitoches' 
 alias v='vim'
 alias n='nvim'
 alias ls='lsd'
