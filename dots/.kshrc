@@ -23,9 +23,9 @@ alias make='make -j2'
 set -o vi
 
 # Define ANSI color escape sequences
-YELLOW='\033[0;33m'
+RED='\033[0;31m'
 BLUE='\033[0;34m'
 RESET='\033[0m'
 
 # Set the PS1 prompt
-PS1='${BLUE}\u${YELLOW}@${BLUE}\h${YELLOW}> ${RESET}'
+PS1='${BLUE}\u${RED}@${BLUE}\h${RED}> ${RESET}'

@@ -6,7 +6,7 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 static char *font = "Liberation Mono:pixelsize=14:antialias=true:autohint=true";
-static int borderpx = 15;
+static int borderpx = 10;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -100,7 +100,7 @@ static const char *colorname[] = {
     [1] = "#ff5555", /* red     */
     [2] = "#50fa7b", /* green   */
     [3] = "#f1fa8c", /* yellow  */
-    [4] = "#bd93f9", /* blue    */
+    [4] = "#007f99", /* blue    */ //#bd93f9
     [5] = "#ff79c6", /* magenta */
     [6] = "#8be9fd", /* cyan    */
     [7] = "#bbbbbb", /* white   */
@@ -123,7 +123,7 @@ static const char *colorname[] = {
 	"#cccccc",
 	"#555555",
 	"gray90", /* default foreground colour */
-	"black", /* default background colour */
+	"#000000", /* default background colour */
 };
 
 
