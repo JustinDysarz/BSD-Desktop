@@ -2,6 +2,7 @@
 
 cd ~/Media/prez &&
 
-    file=$(ls | dmenu -i -p Presentations)
+file=$(ls | dmenu -i -p Presentations)
+cd $file
 
-sent "$file/"$file
+sent $file
