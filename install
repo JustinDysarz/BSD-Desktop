@@ -1,9 +1,9 @@
 #!/bin/sh
 
-cp dots/.* ~/ & cp -r dots/neomutt ~/.config & cp -r dots/mpv ~/.config & cp -r dots/newsboat ~/.config &
+cp dots/.* ~/ & cp -r dots/neomutt ~/.config & cp -r dots/mpv ~/.config & cp -r dots/newsboat ~/.config & cp -r dots/dmenu ~/.config/ &
 if [ ! -d ~/Media ]; then
     mkdir ~/Media
-fi &&
+fi &
 
 if [ ! -d ~/Media/Wallpapers ]; then
     cp -r Wallpapers ~/Media
