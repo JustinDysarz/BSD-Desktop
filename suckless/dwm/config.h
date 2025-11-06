@@ -17,8 +17,8 @@ static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_red[]         = "#CF4229"; //red#005577
-static const char col_blue1[]        = "#005577";
-static const char col_blue2[]        = "#007f99";
+static const char col_blue1[]       = "#005577";
+static const char col_blue2[]       = "#007f99";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_red },
@@ -81,12 +81,12 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_red, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *ranger[]   = { "st", "-e", "ranger", NULL };
-static const char *htop[]   = { "st", "-e", "htop", NULL };
-static const char *rss[]   = { "st", "-e", "newsboat", NULL };
-static const char *mail[]   = { "st", "-e", "neomutt", NULL };
+static const char *htop[]     = { "st", "-e", "htop", NULL };
+static const char *rss[]      = { "st", "-e", "newsboat", NULL };
+static const char *mail[]     = { "st", "-e", "neomutt", NULL };
 static const char *firefox[]  = { "firefox", NULL };
-static const char *connect[] = { "st", "-e", ".config/script.sh", NULL }; /*Portal*/
-static const char *nvim[] = {"st", "-e", "nvim", NULL};
+static const char *connect[]  = { "st", "-e", ".config/script.sh", NULL }; /*Portal*/
+static const char *nvim[]     = {"st", "-e", "nvim", NULL};
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
