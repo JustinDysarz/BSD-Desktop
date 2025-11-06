@@ -86,7 +86,7 @@ static const char *rss[]      = { "st", "-e", "newsboat", NULL };
 static const char *mail[]     = { "st", "-e", "neomutt", NULL };
 static const char *firefox[]  = { "firefox", NULL };
 static const char *connect[]  = { "st", "-e", ".config/script.sh", NULL }; /*Portal*/
-static const char *nvim[]     = {"st", "-e", "nvim", NULL};
+static const char *nvim[]     = {"st", "-e", "/bin/sh", "-c", "~/.config/nvim.sh", NULL};
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -102,6 +102,8 @@ static const Key keys[] = {
    	{ MODKEY,                       XK_n,      spawn,          {.v = nvim } },
    	{ MODKEY,                       XK_t,      spawn,          SHCMD("maim ~/Pictures/$(date +%s).png") },
    	{ MODKEY,                       XK_v,      spawn,          SHCMD("~/.config/dmenu/video.sh") },
+   	{ MODKEY,                       XK_a,      spawn,          SHCMD("~/.config/rec.sh") },
+   	{ MODKEY|ShiftMask,             XK_a,      spawn,          SHCMD("pgrep ffmpeg | xargs kill") },
    	{ Mod1Mask|ShiftMask,           XK_l,      spawn,          SHCMD("slock") },
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
