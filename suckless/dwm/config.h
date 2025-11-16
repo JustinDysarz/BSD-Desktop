@@ -80,7 +80,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_red, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
-static const char *ranger[]   = { "st", "-e", "ranger", NULL };
+static const char *nnn[]   = { "st", "-e", "nnn", NULL };
 static const char *htop[]     = { "st", "-e", "htop", NULL };
 static const char *rss[]      = { "st", "-e", "newsboat", NULL };
 static const char *mail[]     = { "st", "-e", "neomutt", NULL };
@@ -93,7 +93,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("~/.config/dmenu/prez.sh") },
 	{ MODKEY,             		    XK_Return, spawn,          {.v = termcmd } },
-   	{ MODKEY,                       XK_e,      spawn,          {.v = ranger } },
+   	{ MODKEY,                       XK_e,      spawn,          {.v = nnn } },
    	{ MODKEY,                       XK_w,      spawn,          {.v = firefox } },
    	{ MODKEY,                       XK_f,      spawn,          {.v = rss } },
 	{ MODKEY,                       XK_m,      spawn,          {.v = mail} },
