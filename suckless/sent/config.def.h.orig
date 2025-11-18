@@ -63,6 +63,3 @@ static Filter filters[] = {
 
 static const unsigned int slide_nb_margin = 10;
 static const char *slide_nb_fnt[] = { "fixed:size=16", NULL };
-
-static const unsigned int slide_nb_margin = 10;
-static const char *slide_nb_fnt[] = { "fixed:size=16", NULL };

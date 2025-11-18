@@ -549,6 +549,8 @@ xdraw()
 {
 	unsigned int height, width, i;
 	Image *im = slides[idx].img;
+    char slide_nb[16];
+    unsigned int slide_nb_w, slide_nb_h;
 
 	getfontsize(&slides[idx], &width, &height);
 	XClearWindow(xw.dpy, xw.win);
