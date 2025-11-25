@@ -8,4 +8,4 @@ if [$file == ""]; then
     exit
 fi
 
-zathura $file
+zathura "$file"

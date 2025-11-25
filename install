@@ -11,10 +11,12 @@ else
     cp -r Wallpapers/* ~/Media/Wallpapers
 fi &&
 
+doas cp ~/.vimrc /root/
+
 cp -r Wallpapers ~/Media &
-cd suckless/dmenu &&  make && doas make install clean &&
-cd ../dwm &&  make && doas make install clean &&
-cd ../slock && make && doas make install clean &&
-cd ../slstatus && make && doas make install clean &&
-cd ../st &&  doas make install clean && cd ../tabbed &&
-make && doas make install clean
+cd suckless/dmenu &&  make -j4  && doas make install clean &&
+cd ../dwm &&  make -j4  && doas make install clean &&
+cd ../slock && make -j4  && doas make install clean &&
+cd ../slstatus && make -j4  && doas make install clean &&
+cd ../st && make -j4 &&  doas make install clean &&
+cd ../tabbed && make -j4  && doas make install clean

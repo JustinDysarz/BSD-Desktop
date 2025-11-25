@@ -33,4 +33,4 @@ LIBS = -L$(X11LIB) -lm -lX11 -lutil -lXft \
 MANPREFIX = ${PREFIX}/man
 
 # compiler and linker
-# CC = c99
+#CC = tcc

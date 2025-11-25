@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Liberation Mono:pixelsize=16:antialias=true:autohint=true";
+static char *font = "Liberation Mono:pixelsize=17:antialias=true:autohint=true";
 static int borderpx = 10;
 
 /*
@@ -71,7 +71,7 @@ static unsigned int cursorthickness = 1;
  * bell volume. It must be a value between -100 and 100. Use 0 for disabling
  * it
  */
-static int bellvolume = 100;
+static int bellvolume = 0;
 
 /* default TERM value */
 char *termname = "st-256color";
