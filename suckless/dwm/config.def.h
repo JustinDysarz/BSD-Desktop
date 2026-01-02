@@ -10,19 +10,22 @@ static const unsigned int gappov    = 35;       /* vert outer gap between window
 static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=10" };
-static const char dmenufont[]       = "monospace:size=10";
-static const char col_gray1[]       = "#222222";
-static const char col_gray2[]       = "#444444";
+static const char *fonts[]          = { "Hack:size=10", "monospace:size=10" };
+static const char dmenufont[]       = "Hack:size=10";
+static const char col_black[]       = "#000000";
+//static const char col_gray1[]       = "#222222";
+//static const char col_gray2[]       = "#444444";
+static const char col_gray[]        = "#1b1b2a";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_red[]         = "#780606"; //red#005577
+static const char col_red[]         = "#ff0000";
+static const char col_green[]       = "#00ff00";
 static const char col_blue1[]       = "#005577";
 static const char col_blue2[]       = "#007f99";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_red },
-	[SchemeSel]  = { col_gray4, col_blue1,  col_blue2  },
+	[SchemeNorm] = { col_red, col_black, col_red },
+	[SchemeSel]  = { col_green, col_black,  col_green  },
 };
 
 /* tagging */
@@ -48,8 +51,8 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[@]",      spiral },    /* first entry is default */
 	{ "[M]",      monocle },
+	{ "[@]",      spiral },    /* first entry is default */
 	{ "[]=",      tile },
 	{ "[\\]",     dwindle },
 	{ "H[]",      deck },
@@ -78,9 +81,11 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_red, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_black, "-nf", col_gray3, "-sb", col_red, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
-static const char *nnn[]   = { "st", "-e", "nnn", NULL };
+static const char scratchpadname[] = "scratchpad";
+static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
+static const char *ranger[]   = { "st", "-e", "ranger", NULL };
 static const char *htop[]     = { "st", "-e", "htop", NULL };
 static const char *rss[]      = { "st", "-e", "newsboat", NULL };
 static const char *mail[]     = { "st", "-e", "neomutt", NULL };
@@ -94,7 +99,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("~/.config/dmenu/prez.sh") },
 	{ MODKEY|Mod1Mask,              XK_p,      spawn,          SHCMD("~/.config/dmenu/img.sh") },
 	{ MODKEY,             		    XK_Return, spawn,          {.v = termcmd } },
-   	{ MODKEY,                       XK_e,      spawn,          {.v = nnn } },
+   	{ MODKEY,                       XK_e,      spawn,          {.v = ranger } },
    	{ MODKEY,                       XK_w,      spawn,          {.v = firefox } },
    	{ MODKEY,                       XK_f,      spawn,          {.v = rss } },
 	{ MODKEY,                       XK_m,      spawn,          {.v = mail} },
@@ -109,8 +114,8 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
-//	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
-//	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
+	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_d,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_d,      spawn,          SHCMD("~/.config/dmenu/doc.sh") },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
@@ -136,8 +141,8 @@ static const Key keys[] = {
 	{ MODKEY|Mod1Mask|ShiftMask,    XK_g,      defaultgaps,    {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
-	{ MODKEY|ShiftMask,             XK_t,      setlayout,      {.v = &layouts[0]} },
-	{ MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[1]} },
+	{ MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[0]} },
+	{ MODKEY|ShiftMask,             XK_t,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_r,      setlayout,      {.v = &layouts[3]} },
 	{ MODKEY|ShiftMask,             XK_r,      setlayout,      {.v = &layouts[4]} },
 	{ MODKEY|Mod1Mask,              XK_t,      setlayout,      {.v = &layouts[5]} },
@@ -157,6 +162,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+	{ MODKEY,                       XK_s,      togglescratch,  {.v = scratchpadcmd } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
