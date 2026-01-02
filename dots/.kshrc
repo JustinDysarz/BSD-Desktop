@@ -1,4 +1,4 @@
-export EDITOR=nvim
+export EDITOR=vim
 export FCEDIT=$EDITOR
 export PAGER=less
 export LESS='-iMRS -x2'
@@ -17,6 +17,7 @@ alias la='lsd -lha'
 alias sensors='sysctl hw.sensors'
 alias disks='sysctl hw.disknames'
 alias poweroff='shutdown -p now'
+alias reboot='doas reboot'
 alias make='make -j2'
 
 # Vi mode
