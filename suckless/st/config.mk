@@ -26,8 +26,8 @@ STCFLAGS = $(INCS) $(STCPPFLAGS) $(CPPFLAGS) $(CFLAGS) -O3 -mavx -mavx2
 STLDFLAGS = $(LIBS) $(LDFLAGS)
 
 # OpenBSD:
-CPPFLAGS = -DVERSION=\"$(VERSION)\" -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -O3
-LIBS = -L$(X11LIB) -lm -lX11 -lutil -lXft -mavx -mavx2\
+CPPFLAGS = -DVERSION=\"$(VERSION)\" -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -O3 -mavx -mavx2 -march=native
+LIBS = -L$(X11LIB) -lm -lX11 -lutil -lXft\
        `$(PKG_CONFIG) --libs fontconfig` \
        `$(PKG_CONFIG) --libs freetype2`
 MANPREFIX = ${PREFIX}/man

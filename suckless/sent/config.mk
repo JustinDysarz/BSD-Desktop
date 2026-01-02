@@ -21,7 +21,7 @@ INCS = -I. -I${X11INC} -I${X11INC}/freetype2
 
 # flags
 CPPFLAGS = -DVERSION=\"${VERSION}\" -D_XOPEN_SOURCE=600
-CFLAGS += -g -std=c99 -pedantic -Wall -O3 ${INCS} ${CPPFLAGS}
+CFLAGS += -g -std=c99 -pedantic -Wall -O3 ${INCS} ${CPPFLAGS} -mavx -mavx2
 LDFLAGS += -g ${LIBS}
 #CFLAGS += -std=c99 -pedantic -Wall -Os ${INCS} ${CPPFLAGS}
 #LDFLAGS += ${LIBS}
