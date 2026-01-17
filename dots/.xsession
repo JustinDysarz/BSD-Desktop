@@ -17,6 +17,5 @@ export PATH=$HOME/.config/emacs/bin:$PATH
 setxkbmap -option caps:swapescape &
 feh --bg-scale Media/Wallpapers/14193296.jpg &
 slstatus &
-doas pfctl -f /etc/pf.conf &&
 redshift -l 31.760719:-93.086273 -t 5700:3600 -g 0.8 -m randr -v &
 exec dwm
