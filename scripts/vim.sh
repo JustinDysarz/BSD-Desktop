@@ -1,4 +1,4 @@
 #!/bin/sh
 cd ~/ &&
 
-vim $(fzf --preview less)
+vim $(fzf)

@@ -91,13 +91,13 @@ static const char *htop[]     = { "st", "-e", "htop", NULL };
 static const char *rss[]      = { "st", "-e", "newsboat", NULL };
 static const char *mail[]     = { "st", "-e", "neomutt", NULL };
 static const char *firefox[]  = { "firefox", NULL };
-static const char *vim[]     = {"st", "-e", "/bin/sh", "-c", "~/.config/vim.sh", NULL};
+static const char *vim[]     = {"st", "-e", "/bin/sh", "-c", "~/scripts/vim.sh", NULL};
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-	{ MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("~/.config/dmenu/prez.sh") },
-	{ MODKEY|Mod1Mask,              XK_p,      spawn,          SHCMD("~/.config/dmenu/img.sh") },
+	{ MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("~/scripts/dmenu/prez.sh") },
+	{ MODKEY|Mod1Mask,              XK_p,      spawn,          SHCMD("~/scripts/dmenu/img.sh") },
 	{ MODKEY,             		    XK_Return, spawn,          {.v = termcmd } },
    	{ MODKEY,                       XK_e,      spawn,          {.v = ranger } },
    	{ MODKEY,                       XK_w,      spawn,          {.v = firefox } },
@@ -107,8 +107,8 @@ static const Key keys[] = {
    	{ MODKEY,                       XK_x,      spawn,          SHCMD("~/scripts/xephyr.sh") },
    	{ MODKEY,                       XK_n,      spawn,          {.v = vim } },
    	{ MODKEY,                       XK_t,      spawn,          SHCMD("maim ~/Pictures/$(date +%s).png") },
-   	{ MODKEY,                       XK_v,      spawn,          SHCMD("~/.config/dmenu/video.sh") },
-   	{ MODKEY,                       XK_a,      spawn,          SHCMD("~/.config/rec.sh") },
+   	{ MODKEY,                       XK_v,      spawn,          SHCMD("~/scripts/dmenu/video.sh") },
+   	{ MODKEY,                       XK_a,      spawn,          SHCMD("~/scripts/rec.sh") },
    	{ MODKEY|ShiftMask,             XK_a,      spawn,          SHCMD("pgrep ffmpeg | xargs kill") },
    	{ Mod1Mask|ShiftMask,           XK_l,      spawn,          SHCMD("slock") },
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
@@ -116,7 +116,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_d,      incnmaster,     {.i = -1 } },
-	{ MODKEY,                       XK_d,      spawn,          SHCMD("~/.config/dmenu/doc.sh") },
+	{ MODKEY,                       XK_d,      spawn,          SHCMD("~/scripts/dmenu/doc.sh") },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY|ShiftMask,             XK_h,      setcfact,       {.f = +0.25} },

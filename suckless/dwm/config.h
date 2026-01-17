@@ -91,7 +91,7 @@ static const char *htop[]     = { "st", "-e", "htop", NULL };
 static const char *rss[]      = { "st", "-e", "newsboat", NULL };
 static const char *mail[]     = { "st", "-e", "neomutt", NULL };
 static const char *firefox[]  = { "firefox", NULL };
-static const char *vim[]     = {"st", "-e", "/bin/sh", "-c", "~/.config/vim.sh", NULL};
+static const char *vim[]     = {"st", "-e", "/bin/sh", "-c", "~/scripts/vim.sh", NULL};
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
