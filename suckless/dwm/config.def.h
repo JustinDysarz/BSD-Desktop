@@ -22,10 +22,11 @@ static const char col_red[]         = "#ff0000";
 static const char col_green[]       = "#00ff00";
 static const char col_blue1[]       = "#005577";
 static const char col_blue2[]       = "#007f99";
+static const char col_blue[]        = "#061f2b";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_red, col_black, col_red },
-	[SchemeSel]  = { col_green, col_black,  col_green  },
+	[SchemeNorm] = { col_green, col_black, col_red },
+	[SchemeSel]  = { col_red, col_black,  col_green  },
 };
 
 /* tagging */
@@ -81,7 +82,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_black, "-nf", col_gray3, "-sb", col_red, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_black, "-nf", col_red, "-sb", col_black, "-sf", col_green, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
@@ -90,8 +91,7 @@ static const char *htop[]     = { "st", "-e", "htop", NULL };
 static const char *rss[]      = { "st", "-e", "newsboat", NULL };
 static const char *mail[]     = { "st", "-e", "neomutt", NULL };
 static const char *firefox[]  = { "firefox", NULL };
-static const char *connect[]  = { "st", "-e", ".config/script.sh", NULL }; /*Portal*/
-static const char *nvim[]     = {"st", "-e", "/bin/sh", "-c", "~/.config/nvim.sh", NULL};
+static const char *vim[]     = {"st", "-e", "/bin/sh", "-c", "~/.config/vim.sh", NULL};
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -104,8 +104,8 @@ static const Key keys[] = {
    	{ MODKEY,                       XK_f,      spawn,          {.v = rss } },
 	{ MODKEY,                       XK_m,      spawn,          {.v = mail} },
    	{ MODKEY,                       XK_b,      spawn,          {.v = htop } },
-   	{ MODKEY,                       XK_x,      spawn,          {.v = connect } },
-   	{ MODKEY,                       XK_n,      spawn,          {.v = nvim } },
+   	{ MODKEY,                       XK_x,      spawn,          SHCMD("~/scripts/xephyr.sh") },
+   	{ MODKEY,                       XK_n,      spawn,          {.v = vim } },
    	{ MODKEY,                       XK_t,      spawn,          SHCMD("maim ~/Pictures/$(date +%s).png") },
    	{ MODKEY,                       XK_v,      spawn,          SHCMD("~/.config/dmenu/video.sh") },
    	{ MODKEY,                       XK_a,      spawn,          SHCMD("~/.config/rec.sh") },
