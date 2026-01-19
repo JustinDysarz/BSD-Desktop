@@ -25,8 +25,10 @@ set -o vi
 
 # Define ANSI color escape sequences
 RED='\033[0;31m'
-BLUE='\033[0;34m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;36m'
 RESET='\033[0m'
 
 # Set the PS1 prompt
-PS1='${BLUE}\u${RED}@${BLUE}\h${RED}> ${RESET}'
+PS1='${GREEN}\u${YELLOW}@${BLUE}\h${RED}> ${RESET}'

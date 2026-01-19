@@ -7,7 +7,7 @@ const unsigned int interval = 1000;
 static const char unknown_str[] = "n/a";
 
 /* maximum output string length */
-#define MAXLEN 100
+#define MAXLEN 128
 
 /*
  * function            description                     argument (example)
@@ -20,7 +20,7 @@ static const char unknown_str[] = "n/a";
  *                                                     NULL on OpenBSD/FreeBSD
  * cat                 read arbitrary file             path
  * cpu_freq            cpu frequency in MHz            NULL
- * cpu_perc            cpu usage in percent            NULL
+ * cpu_perc            cpu usage in percent            NUL
  * datetime            date and time                   format string (%F %T)
  * disk_free           free disk space in GB           mountpoint path (/)
  * disk_perc           disk usage in percent           mountpoint path (/)
@@ -66,7 +66,9 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ datetime,     "[%s] ",          "%F %T" },
-	{ wifi_essid,   "[ %s] ",    "iwm0"  },
-	{ battery_perc, "[ %s%%]",    NULL    },
+	{ vol_perc,         "[vol %s%%] ",  NULL    },
+	{ datetime,         "[%s] ",        "%F %T" },
+	{ wifi_essid,       "[ %s] ",      "iwm0"  },
+	{ battery_perc,     "[ %s%%] ",    NULL    },
+	{ kernel_release,   "[OpenBSD%s]",  NULL    },
 };
