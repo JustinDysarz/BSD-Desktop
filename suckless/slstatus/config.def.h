@@ -66,9 +66,13 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ vol_perc,         "[vol %s%%] ",  NULL    },
-	{ datetime,         "[%s] ",        "%F %T" },
-	{ wifi_essid,       "[ %s] ",      "iwm0"  },
-	{ battery_perc,     "[ %s%%] ",    NULL    },
-	{ kernel_release,   "[OpenBSD%s]",  NULL    },
+	{ vol_perc,         "[ %s%%]",     NULL        },
+    { temp,             "[🌡️ %s]",      NULL        },
+	{ battery_perc,     "[ %s%%",      NULL        },
+    { battery_state,    "%s]",          NULL        },
+	{ wifi_essid,       "[ %s]",       "iwm0"      },
+    { run_command,      "[void: %s]",
+     "vmctl status | grep void | awk '{print $8}'"  },
+	{ datetime,         "[%s]",         "%F %T"     },
+	{ kernel_release,   "[OpenBSD %s]", NULL        },
 };
