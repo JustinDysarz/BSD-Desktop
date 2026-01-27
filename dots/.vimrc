@@ -19,7 +19,9 @@ set wildmenu
 set wildmode=list:longest
 set autoindent
 set smartindent
+
 set cc=80
+
 colorscheme elflord
 
 filetype on

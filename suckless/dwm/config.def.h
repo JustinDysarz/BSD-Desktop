@@ -7,7 +7,7 @@ static const unsigned int gappih    = 35;       /* horiz inner gap between windo
 static const unsigned int gappiv    = 35;       /* vert inner gap between windows */
 static const unsigned int gappoh    = 35;       /* horiz outer gap between windows and screen edge */
 static const unsigned int gappov    = 35;       /* vert outer gap between windows and screen edge */
-static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
+static       int smartgaps          = 1;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Hack:size=10", "monospace:size=10" };
@@ -15,14 +15,14 @@ static const char dmenufont[]       = "Hack:size=10";
 static const char col_black[]       = "#000000";
 //static const char col_gray1[]       = "#222222";
 //static const char col_gray2[]       = "#444444";
-static const char col_gray[]        = "#1b1b2a";
-static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
+//static const char col_gray[]        = "#1b1b2a";
+//static const char col_gray3[]       = "#bbbbbb";
+//static const char col_gray4[]       = "#eeeeee";
 static const char col_red[]         = "#ff0000";
 static const char col_green[]       = "#00ff00";
-static const char col_blue1[]       = "#005577";
-static const char col_blue2[]       = "#007f99";
-static const char col_blue[]        = "#061f2b";
+//static const char col_blue1[]       = "#005577";
+//static const char col_blue2[]       = "#007f99";
+//static const char col_blue[]        = "#061f2b";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_green, col_black, col_red },
@@ -30,7 +30,8 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX" };
+static const char *tags[] = { "I", "II", "III", "IV", "V", "VI", "VII", "VIII",
+    "IX" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -46,7 +47,7 @@ static const float mfact     = 0.45; /* factor of master area size [0.05..0.95] 
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
-static const int refreshrate = 120;  /* refresh rate (per second) for client move/resize */
+static const int refreshrate = 60;  /* refresh rate (per second) for client move/resize */
 
 #define FORCE_VSPLIT 1  /* nrowgrid layout: force two clients to always split vertically */
 #include "vanitygaps.c"
@@ -120,12 +121,16 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_d,      spawn,          SHCMD("~/scripts/dmenu/doc.sh") },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
-	{ MODKEY|ShiftMask,             XK_h,      setcfact,       {.f = +0.25} },
-	{ MODKEY|ShiftMask,             XK_l,      setcfact,       {.f = -0.25} },
+//	{ MODKEY|Mod1Mask,              XK_u,      incrgaps,       {.i = +2 } },
+	{ MODKEY|Mod1Mask,              XK_u,      setmfact,       {.f = +0.05} },
+//	{ MODKEY|Mod1Mask|ShiftMask,    XK_u,      incrgaps,       {.i = -2 } },
+	{ MODKEY|Mod1Mask|ShiftMask,    XK_u,      setcfact,       {.f = -0.25} },
 	{ MODKEY|ShiftMask,             XK_o,      setcfact,       {.f =  0.00} },
 	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
-	{ MODKEY|Mod1Mask,              XK_u,      incrgaps,       {.i = +2 } },
-	{ MODKEY|Mod1Mask|ShiftMask,    XK_u,      incrgaps,       {.i = -2 } },
+//	{ MODKEY|Mod1Mask,              XK_u,      incrgaps,       {.i = +2 } },
+//	{ MODKEY|Mod1Mask|ShiftMask,    XK_u,      incrgaps,       {.i = -2 } },
+	{ MODKEY|ShiftMask,             XK_l,      incrgaps,       {.i = -2} },
+	{ MODKEY|ShiftMask,             XK_h,      incrgaps,       {.i = +2} },
 	{ MODKEY|Mod1Mask,              XK_i,      incrigaps,      {.i = +1 } },
 	{ MODKEY|Mod1Mask|ShiftMask,    XK_i,      incrigaps,      {.i = -1 } },
 	{ MODKEY|Mod1Mask,              XK_o,      incrogaps,      {.i = +1 } },

@@ -1,6 +1,8 @@
 #!/bin/sh
 
-cp dots/.* ~/ & cp -r dots/neomutt ~/.config & cp -r dots/mpv ~/.config & cp -r dots/newsboat ~/.config & cp -rf scripts ~/ &
+cp dots/.* ~/ & cp -r dots/neomutt ~/.config & cp -r dots/mpv ~/.config &
+cp -r dots/newsboat ~/.config & cp -rf scripts ~/ &
+cp -r dots/gtk-3.0 ~/.config &
 if [ ! -d ~/Media ]; then
     mkdir ~/Media
 fi &
