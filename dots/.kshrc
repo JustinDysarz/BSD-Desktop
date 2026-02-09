@@ -18,7 +18,8 @@ alias sensors='sysctl hw.sensors'
 alias disks='sysctl hw.disknames'
 alias poweroff='shutdown -p now'
 alias reboot='doas reboot'
-alias make='make -j2'
+alias make='make -j4'
+alias gmake='gmake -j4'
 
 # Vi mode
 set -o vi
