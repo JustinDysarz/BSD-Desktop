@@ -881,7 +881,7 @@ Atom
 getatomprop(Client *c, Atom prop)
 {
 	int di;
-	unsigned long nitems, dl;
+    unsigned long nitems, dl;
 	unsigned char *p = NULL;
 	Atom da, atom = None;
 
