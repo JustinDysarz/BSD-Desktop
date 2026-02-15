@@ -11,11 +11,10 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin
 export PATH HOME TERM
 export QT_QPA_PLATFORMTHEME=qt6ct
-
 export ENV=$HOME/.kshrc
 export PATH=$HOME/.config/emacs/bin:$PATH
-setxkbmap -option caps:swapescape &
 feh --bg-scale Media/Wallpapers/14193296.jpg &
-slstatus &
+setxkbmap -option caps:swapescape &
 redshift -l 31.760719:-93.086273 -t 5700:3600 -g 0.8 -m randr -v &
+slstatus &
 exec dwm
