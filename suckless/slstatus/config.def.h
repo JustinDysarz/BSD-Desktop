@@ -7,7 +7,7 @@ const unsigned int interval = 1000;
 static const char unknown_str[] = "n/a";
 
 /* maximum output string length */
-#define MAXLEN 128
+#define MAXLEN 256
 
 /*
  * function            description                     argument (example)
@@ -66,11 +66,13 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
+    { netspeed_tx, "[%sB/s⬆️ ",  "iwx0" },
+    { netspeed_rx, "%sB/s⬇️ ",  "iwx0" },
+	{ wifi_essid,   " %s]",    "iwx0"  },
 	{ vol_perc,         "[ %s%%]",     NULL        },
     { temp,             "[🌡️ %s]",      NULL        },
 	{ battery_perc,     "[ %s%%",      NULL        },
     { battery_state,    "%s]",          NULL        },
-	{ wifi_essid,       "[ %s]",       "iwm0"      },
     { run_command,      "[void: %s]",
      "vmctl status | grep void | awk '{print $8}'"  },
 	{ datetime,         "[%s]",         "%F %T"     },

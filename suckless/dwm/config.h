@@ -10,7 +10,7 @@ static const unsigned int gappov    = 35;       /* vert outer gap between window
 static       int smartgaps          = 1;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Hack:size=10", "monospace:size=10" };
+static const char *fonts[]          = { "Hack:size=10", "monospace:size=12" };
 static const char dmenufont[]       = "Hack:size=10";
 static const char col_black[]       = "#000000";
 //static const char col_gray1[]       = "#222222";
@@ -88,7 +88,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
-static const char *ranger[]   = { "st", "-e", "ranger", NULL };
+static const char *lf[]   = { "st", "-e", "lf", NULL };
 static const char *htop[]     = { "st", "-e", "htop", NULL };
 static const char *rss[]      = { "st", "-e", "newsboat", NULL };
 static const char *mail[]     = { "st", "-e", "neomutt", NULL };
@@ -101,7 +101,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("~/scripts/dmenu/prez.sh") },
 	{ MODKEY|Mod1Mask,              XK_p,      spawn,          SHCMD("~/scripts/dmenu/img.sh") },
 	{ MODKEY,             		    XK_Return, spawn,          {.v = termcmd } },
-   	{ MODKEY,                       XK_e,      spawn,          {.v = ranger } },
+   	{ MODKEY,                       XK_e,      spawn,          {.v = lf } },
    	{ MODKEY,                       XK_w,      spawn,          {.v = firefox } },
    	{ MODKEY,                       XK_f,      spawn,          {.v = rss } },
 	{ MODKEY,                       XK_m,      spawn,          {.v = mail} },
