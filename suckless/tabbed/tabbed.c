@@ -561,7 +561,7 @@ getatom(int a)
 	XGetWindowProperty(dpy, win, wmatom[a], 0L, BUFSIZ, False, XA_STRING,
 	                   &adummy, &idummy, &ldummy, &ldummy, &p);
 	if (p)
-		strncpy(buf, (char *)p, LENGTH(buf)-1);
+		strlcpy(buf, (char *)p, LENGTH(buf)-1);
 	else
 		buf[0] = '\0';
 	XFree(p);
@@ -627,10 +627,10 @@ gettextprop(Window w, Atom atom, char *text, unsigned int size)
 		return False;
 
 	if (name.encoding == XA_STRING) {
-		strncpy(text, (char *)name.value, size - 1);
+		strlcpy(text, (char *)name.value, size - 1);
 	} else if (XmbTextPropertyToTextList(dpy, &name, &list, &n) >= Success
 	           && n > 0 && *list) {
-		strncpy(text, *list, size - 1);
+		strlcpy(text, *list, size - 1);
 		XFreeStringList(list);
 	}
 	text[size - 1] = '\0';

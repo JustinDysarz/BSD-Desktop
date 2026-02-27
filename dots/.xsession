@@ -13,7 +13,7 @@ export PATH HOME TERM
 export QT_QPA_PLATFORMTHEME=qt6ct
 export ENV=$HOME/.kshrc
 export PATH=$HOME/.config/emacs/bin:$PATH
-feh --bg-scale Media/Wallpapers/14193296.jpg &
+feh --bg-scale Media/Wallpapers/6174511.png &
 setxkbmap -option caps:swapescape &
 redshift -l 31.760719:-93.086273 -t 5700:3600 -g 0.8 -m randr -v &
 slstatus &

@@ -22,7 +22,7 @@ set smartindent
 
 set cc=80
 
-colorscheme elflord
+colorscheme morning
 
 filetype on
 filetype indent on
