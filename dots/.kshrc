@@ -33,4 +33,4 @@ BLUE='\033[0;36m'
 RESET='\033[0m'
 
 # Set the PS1 prompt
-PS1='${GREEN}\u${YELLOW}@${BLUE}\h${RED}> ${RESET}'
+#PS1='${GREEN}\u${YELLOW}@${BLUE}\h${RED}> ${RESET}'
