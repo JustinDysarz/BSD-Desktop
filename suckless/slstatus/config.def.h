@@ -76,5 +76,6 @@ static const struct arg args[] = {
     { run_command,      "[void: %s]",
      "vmctl status | grep void | awk '{print $8}'"  },
 	{ datetime,         "[%s]",         "%F %T"     },
-	{ kernel_release,   "[OpenBSD %s]", NULL        },
+    { run_command,      "[tasks to complete: %s]",
+        "wc -l ~/.checklist/curr | awk '{print $1}'"}
 };

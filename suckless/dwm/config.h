@@ -50,8 +50,8 @@ static const int refreshrate = 60;  /* refresh rate (per second) for client move
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[M]",      monocle },
 	{ "[@]",      spiral },    /* first entry is default */
+	{ "[M]",      monocle },
 	{ "[]=",      tile },
 	{ "[\\]",     dwindle },
 	{ "H[]",      deck },
@@ -85,12 +85,13 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
-static const char *lf[]   = { "st", "-e", "lf", NULL };
+static const char *ranger[]   = { "st", "-e", "ranger", NULL };
 static const char *htop[]     = { "st", "-e", "htop", NULL };
 static const char *rss[]      = { "st", "-e", "newsboat", NULL };
 static const char *mail[]     = { "st", "-e", "neomutt", NULL };
 static const char *firefox[]  = { "firefox", NULL };
 static const char *vim[]     = {"st", "-e", "/bin/sh", "-c", "~/scripts/vim.sh", NULL};
+static const char *checklist[]     = {"st", "-e", "/bin/sh", "-c", "~/scripts/checklist.sh", NULL};
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -98,13 +99,14 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("~/scripts/dmenu/prez.sh") },
 	{ MODKEY|Mod1Mask,              XK_p,      spawn,          SHCMD("~/scripts/dmenu/img.sh") },
 	{ MODKEY,             		    XK_Return, spawn,          {.v = termcmd } },
-   	{ MODKEY,                       XK_e,      spawn,          {.v = lf } },
+   	{ MODKEY,                       XK_e,      spawn,          {.v = ranger } },
    	{ MODKEY,                       XK_w,      spawn,          {.v = firefox } },
    	{ MODKEY,                       XK_f,      spawn,          {.v = rss } },
 	{ MODKEY,                       XK_m,      spawn,          {.v = mail} },
    	{ MODKEY,                       XK_b,      spawn,          {.v = htop } },
    	{ MODKEY,                       XK_x,      spawn,          SHCMD("~/scripts/xephyr.sh") },
    	{ MODKEY,                       XK_n,      spawn,          {.v = vim } },
+   	{ MODKEY|ShiftMask,             XK_n,      spawn,          {.v = checklist } },
    	{ MODKEY,                       XK_t,      spawn,          SHCMD("maim ~/Pictures/$(date +%s).png") },
    	{ MODKEY,                       XK_v,      spawn,          SHCMD("~/scripts/dmenu/video.sh") },
    	{ MODKEY,                       XK_a,      spawn,          SHCMD("~/scripts/rec.sh") },
@@ -118,14 +120,10 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_d,      spawn,          SHCMD("~/scripts/dmenu/doc.sh") },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
-//	{ MODKEY|Mod1Mask,              XK_u,      incrgaps,       {.i = +2 } },
 	{ MODKEY|Mod1Mask,              XK_u,      setmfact,       {.f = +0.05} },
-//	{ MODKEY|Mod1Mask|ShiftMask,    XK_u,      incrgaps,       {.i = -2 } },
 	{ MODKEY|Mod1Mask|ShiftMask,    XK_u,      setcfact,       {.f = -0.25} },
 	{ MODKEY|ShiftMask,             XK_o,      setcfact,       {.f =  0.00} },
 	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
-//	{ MODKEY|Mod1Mask,              XK_u,      incrgaps,       {.i = +2 } },
-//	{ MODKEY|Mod1Mask|ShiftMask,    XK_u,      incrgaps,       {.i = -2 } },
 	{ MODKEY|ShiftMask,             XK_l,      incrgaps,       {.i = -2} },
 	{ MODKEY|ShiftMask,             XK_h,      incrgaps,       {.i = +2} },
 	{ MODKEY|Mod1Mask,              XK_i,      incrigaps,      {.i = +1 } },
@@ -144,8 +142,8 @@ static const Key keys[] = {
 	{ MODKEY|Mod1Mask|ShiftMask,    XK_g,      defaultgaps,    {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
-	{ MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[0]} },
-	{ MODKEY|ShiftMask,             XK_t,      setlayout,      {.v = &layouts[1]} },
+	{ MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[1]} },
+	{ MODKEY|ShiftMask,             XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_r,      setlayout,      {.v = &layouts[3]} },
 	{ MODKEY|ShiftMask,             XK_r,      setlayout,      {.v = &layouts[4]} },
 	{ MODKEY|Mod1Mask,              XK_t,      setlayout,      {.v = &layouts[5]} },
