@@ -3,6 +3,7 @@ set number
 set relativenumber
 set nowrap
 set tabstop=4
+set softtabstop=4
 set shiftwidth=4
 set expandtab
 set encoding=utf-8
@@ -19,8 +20,15 @@ set wildmenu
 set wildmode=list:longest
 set autoindent
 set smartindent
-
+set fileformat=unix
+set splitbelow splitright
 set cc=80
+set clipboard=unnamedplus
+
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 
 colorscheme morning
 
@@ -34,5 +42,5 @@ vnoremap <C-c> "+y
 map <C-p> "+p
 
 set laststatus=2
-set statusline=%f\ %y\ %m\ %r\ %=%l/%L:%c
+set statusline=%f\ %y\ %m\ %r\ %=%l/%L:%c\ [%p%%]
 autocmd FileType make setlocal noexpandtab tabstop=8 shiftwidth=8
