@@ -34,5 +34,5 @@ vnoremap <C-c> "+y
 map <C-p> "+p
 
 set laststatus=2
-set statusline=%f\ %y\ %m\ %r\ %=%l:%c
+set statusline=%f\ %y\ %m\ %r\ %=%l/%L:%c
 autocmd FileType make setlocal noexpandtab tabstop=8 shiftwidth=8
