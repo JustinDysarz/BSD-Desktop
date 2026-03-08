@@ -50,8 +50,8 @@ static const int refreshrate = 60;  /* refresh rate (per second) for client move
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[@]",      spiral },    /* first entry is default */
 	{ "[M]",      monocle },
+	{ "[@]",      spiral },    /* first entry is default */
 	{ "[]=",      tile },
 	{ "[\\]",     dwindle },
 	{ "H[]",      deck },
@@ -98,9 +98,9 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("~/scripts/dmenu/prez.sh") },
 	{ MODKEY|Mod1Mask,              XK_p,      spawn,          SHCMD("~/scripts/dmenu/img.sh") },
-	{ MODKEY,             		    XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,             		    XK_Return, spawn,          SHCMD("~/scripts/st.sh") },
    	{ MODKEY,                       XK_e,      spawn,          {.v = ranger } },
-   	{ MODKEY,                       XK_w,      spawn,          {.v = firefox } },
+   	{ MODKEY,                       XK_w,      spawn,          SHCMD("~/scripts/surf.sh") },
    	{ MODKEY,                       XK_f,      spawn,          {.v = rss } },
 	{ MODKEY,                       XK_m,      spawn,          {.v = mail} },
    	{ MODKEY,                       XK_b,      spawn,          {.v = htop } },
@@ -142,8 +142,8 @@ static const Key keys[] = {
 	{ MODKEY|Mod1Mask|ShiftMask,    XK_g,      defaultgaps,    {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
-	{ MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[1]} },
-	{ MODKEY|ShiftMask,             XK_t,      setlayout,      {.v = &layouts[0]} },
+	{ MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[0]} },
+	{ MODKEY|ShiftMask,             XK_t,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_r,      setlayout,      {.v = &layouts[3]} },
 	{ MODKEY|ShiftMask,             XK_r,      setlayout,      {.v = &layouts[4]} },
 	{ MODKEY|Mod1Mask,              XK_t,      setlayout,      {.v = &layouts[5]} },

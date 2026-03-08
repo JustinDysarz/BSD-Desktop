@@ -5,4 +5,4 @@ cd ../slock && make -j4 && doas make install clean &&
 cd ../slstatus && make -j4 && doas make install clean &&
 cd ../st && make -j4 &&  doas make install clean &&
 cd ../tabbed && make -j4 && doas make install clean
-#cd ../sent && make -j4 && doas make install clean
+cd ../surf && make -j4 && doas make install clean

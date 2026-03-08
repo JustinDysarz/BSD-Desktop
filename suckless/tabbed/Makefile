@@ -9,12 +9,12 @@ MANPREFIX = ${PREFIX}/share/man
 DOCPREFIX = ${PREFIX}/share/doc/${NAME}
 
 # use system flags.
-TABBED_CFLAGS = -I/usr/X11R6/include -I/usr/include/freetype2 ${CFLAGS} -O3 -mavx -mavx2 -march=native -flto -mfma -mbmi -mpopcnt -maes
+TABBED_CFLAGS = -I/usr/X11R6/include -I/usr/include/freetype2 ${CFLAGS} -O3 -march=native -flto -mfma -mbmi -mpopcnt -maes
 TABBED_LDFLAGS = -L/usr/X11R6/lib -lX11 -lfontconfig -lXft ${LDFLAGS}
 TABBED_CPPFLAGS = -DVERSION=\"${VERSION}\" -D_DEFAULT_SOURCE -D_XOPEN_SOURCE=700L
 
 # OpenBSD (uncomment)
-TABBED_CFLAGS = -I/usr/X11R6/include -I/usr/X11R6/include/freetype2 ${CFLAGS} -O3 -mavx -mavx2 -march=native -flto -mfma -mbmi -mpopcnt -maes
+TABBED_CFLAGS = -I/usr/X11R6/include -I/usr/X11R6/include/freetype2 ${CFLAGS} -O3 -march=native -flto -mfma -mbmi -mpopcnt -maes
 
 SRC = tabbed.c xembed.c
 OBJ = ${SRC:.c=.o}
