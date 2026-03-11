@@ -73,9 +73,9 @@ static const struct arg args[] = {
     { temp,             "[🌡️ %s]",      NULL        },
 	{ battery_perc,     "[ %s%%",      NULL        },
     { battery_state,    "%s]",          NULL        },
-    { run_command,      "[void: %s]",
-     "vmctl status | grep void | awk '{print $8}'"  },
+//    { run_command,      "[void: %s]",
+//     "vmctl status | grep void | awk '{print $8}'"  },
 	{ datetime,         "[%s]",         "%F %T"     },
-    { run_command,      "[tasks today: %s]",
+    { run_command,      "[tasks: %s]",
         "wc -l ~/.checklist/curr | awk '{print $1}'"}
 };

@@ -1991,6 +1991,12 @@ main(int argc, char *argv[])
 	Arg arg;
 	Client *c;
 
+#ifdef __OpenBSD__
+    unveil("~/Downloads", "rw");
+    unveil("~/.surf", "rwxc");
+    unveil(NULL, NULL);
+#endif
+
 	memset(&arg, 0, sizeof(arg));
 
 	/* command line args */

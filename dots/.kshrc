@@ -1,4 +1,4 @@
-export EDITOR=vim
+export EDITOR=vi
 export FCEDIT=$EDITOR
 export PAGER=less
 export LESS='-iMRS -x2'
@@ -10,10 +10,8 @@ HISTSIZE=20000
 
 alias wttr='curl https://wttr.in/Natchitoches' 
 alias v='vim'
-alias n='nvim'
-alias ls='lsd'
-alias ll='lsd -lh'
-alias la='lsd -lha'
+alias ll='ls -lh'
+alias la='ls -lha'
 alias sensors='sysctl hw.sensors'
 alias disks='sysctl hw.disknames'
 alias poweroff='shutdown -p now'

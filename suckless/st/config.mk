@@ -22,11 +22,12 @@ LIBS = -L$(X11LIB) -lm -lrt -lX11 -lutil -lXft \
 
 # flags
 STCPPFLAGS = -DVERSION=\"$(VERSION)\" -D_XOPEN_SOURCE=600
-STCFLAGS = $(INCS) $(STCPPFLAGS) $(CPPFLAGS) $(CFLAGS) -O3 -mavx -mavx2 -march=native -flto -mfma -mbmi -mpopcnt -maes
+STCFLAGS = $(INCS) $(STCPPFLAGS) $(CPPFLAGS) $(CFLAGS) -O3 -march=native -v
 STLDFLAGS = $(LIBS) $(LDFLAGS)
 
 # OpenBSD:
-CPPFLAGS = -DVERSION=\"$(VERSION)\" -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -O3 -mavx -mavx2 -march=native -flto -mfma -mbmi -mpopcnt -maes
+CPPFLAGS = -DVERSION=\"$(VERSION)\" -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -O3 \
+	   -march=native -v
 LIBS = -L$(X11LIB) -lm -lX11 -lutil -lXft\
        `$(PKG_CONFIG) --libs fontconfig` \
        `$(PKG_CONFIG) --libs freetype2`

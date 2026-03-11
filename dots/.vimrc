@@ -6,7 +6,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set encoding=utf-8
-set cursorline
+"set cursorline
 set ignorecase
 set incsearch
 set showmode
@@ -23,17 +23,16 @@ set fileformat=unix
 set splitbelow splitright
 set cc=80
 set clipboard=unnamedplus
+set nohlsearch
 
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-colorscheme morning
-
 filetype on
 filetype indent on
-syntax on
+syntax off
 
 "set spell!
 

@@ -16,7 +16,7 @@ INCS = -I. -I/usr/include -I${X11INC}
 
 # flags
 CPPFLAGS = -DVERSION=\"${VERSION}\" -D_DEFAULT_SOURCE
-CFLAGS = -std=c99 -pedantic -Wall ${INCS} ${CPPFLAGS} -O3 -mavx -mavx2 -march=native -flto -mfma -mbmi -mpopcnt -maes
+CFLAGS = -std=c99 -pedantic -Wall ${INCS} ${CPPFLAGS} -O3 -march=native -v
 LDFLAGS = -s ${LIBS}
 COMPATSRC = explicit_bzero.c
 
