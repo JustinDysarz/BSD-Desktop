@@ -1,4 +1,4 @@
 #!/bin/sh
 cd ~/ &&
 
-vim $(fzf)
+$EDITOR $(fzf)

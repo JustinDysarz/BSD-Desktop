@@ -100,7 +100,7 @@ static const Key keys[] = {
 	{ MODKEY|Mod1Mask,              XK_p,      spawn,          SHCMD("~/scripts/dmenu/img.sh") },
 	{ MODKEY,             		    XK_Return, spawn,          SHCMD("~/scripts/st.sh") },
    	{ MODKEY,                       XK_e,      spawn,          {.v = ranger } },
-   	{ MODKEY,                       XK_w,      spawn,          SHCMD("~/scripts/surf.sh") },
+   	{ MODKEY,                       XK_w,      spawn,          {.v = firefox } },
    	{ MODKEY,                       XK_f,      spawn,          {.v = rss } },
 	{ MODKEY,                       XK_m,      spawn,          {.v = mail} },
    	{ MODKEY,                       XK_b,      spawn,          {.v = htop } },

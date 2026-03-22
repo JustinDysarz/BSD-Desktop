@@ -17,7 +17,7 @@ TABBED_CPPFLAGS = -DVERSION=\"${VERSION}\" -D_DEFAULT_SOURCE \
 
 # OpenBSD (uncomment)
 TABBED_CFLAGS = -I/usr/X11R6/include -I/usr/X11R6/include/freetype2 ${CFLAGS} \
-		-O3 -march=native -v
+		-O3 -march=native -mtune=native -v
 
 SRC = tabbed.c xembed.c
 OBJ = ${SRC:.c=.o}
