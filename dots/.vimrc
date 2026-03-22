@@ -2,11 +2,11 @@ set nocompatible
 set number
 set relativenumber
 set nowrap
-set tabstop=4
-set shiftwidth=4
-set expandtab
+set tabstop=8
+set shiftwidth=8
+set noexpandtab
 set encoding=utf-8
-"set cursorline
+set cursorline
 set ignorecase
 set incsearch
 set showmode
@@ -32,7 +32,8 @@ map <C-l> <C-w>l
 
 filetype on
 filetype indent on
-syntax off
+syntax on
+colorscheme slate
 
 "set spell!
 

@@ -19,6 +19,7 @@ alias reboot='doas reboot'
 alias make='make -j5'
 alias gmake='gmake -j5'
 alias gdb='egdb'
+alias fastfetch='fastfetch --logo openbsd_small'
 
 # Vi mode
 set -o vi

@@ -6,6 +6,7 @@ export TERMINAL="st"
 export TERMINAL_PROG="st"
 export BROWSER="firefox"
 export EDITOR="vim"
+export VISUAL="vim"
 export SDL_VIDEO_X11_DGAMOUSE=0
 export _JAVA_AWT_WM_NONREPARENTING=1
 PATH=$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin:/usr/local/sbin
